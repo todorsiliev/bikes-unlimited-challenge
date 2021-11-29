@@ -47,6 +47,8 @@ GEM
     activerecord (6.1.4.1)
       activemodel (= 6.1.4.1)
       activesupport (= 6.1.4.1)
+    activerecord-import (1.2.0)
+      activerecord (>= 3.2)
     activestorage (6.1.4.1)
       actionpack (= 6.1.4.1)
       activejob (= 6.1.4.1)
@@ -80,6 +82,7 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    csv (3.1.9)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -238,9 +241,11 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  activerecord-import
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  csv
   devise
   devise-jwt
   jbuilder (~> 2.7)
