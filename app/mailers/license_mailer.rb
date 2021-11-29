@@ -6,7 +6,8 @@ class LicenseMailer < ApplicationMailer
     pdf = Prawn::Document.new
     pdf.text "Rider License"
     pdf.text "NAME: #{@license.holder_name}"
-    pdf.text "ISSUED: #{@license.licensed_at.strftime('%m/%d/%Y')}"
+    pdf.text "ISSUED AT: #{@license.certification_center.name}"
+    pdf.text "ISSUE DATE: #{@license.licensed_at.strftime('%m/%d/%Y')}"
 
     attachments['license.pdf'] = pdf
     mail(to: @license.holder_email, subject: 'Your Rider License by Bikes Unlimited')
