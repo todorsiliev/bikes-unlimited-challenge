@@ -12,6 +12,9 @@ namespace :license do
       NightlyJobMailer.with(center: center).email_for_certification_center.deliver_later
     end
 
+    # Notify the owner of BU
+    NightlyJobMailer.with(count: License.unprocessed.count).summary_email.deliver_later
+
     # Mark processed licenses
     License.unprocessed.update_all(processed_at: Time.now)
   end
